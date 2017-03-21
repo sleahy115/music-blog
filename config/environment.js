@@ -26,6 +26,9 @@ module.exports = function(environment) {
     // messagingSenderId: "827965590245"
   },
 
+  // mtvApi: {
+  //   apiKey:
+  // }
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

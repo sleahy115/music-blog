@@ -23,3 +23,7 @@ ul {
 time {
   float: right;
 }
+
+img {
+  width: 350px;
+}
