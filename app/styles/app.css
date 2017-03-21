@@ -1,0 +1,25 @@
+li {
+  display: inline;
+  padding: 25px;
+  list-style: none;
+}
+
+ul {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.clip-footer {
+  display: inline;
+}
+
+.clip-author {
+  text-align: left;
+}
+
+time {
+  float: right;
+}
