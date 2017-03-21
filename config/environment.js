@@ -23,7 +23,7 @@ module.exports = function(environment) {
     authDomain: "news-app-402d4.firebaseapp.com",
     databaseURL: "https://news-app-402d4.firebaseio.com",
     storageBucket: "news-app-402d4.appspot.com",
-    messagingSenderId: "827965590245"
+    // messagingSenderId: "827965590245"
   },
 
     APP: {

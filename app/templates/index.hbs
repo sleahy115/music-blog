@@ -1,2 +1,6 @@
 <!-- {{outlet}} -->
-{{clip-content}}
+
+  {{#each model as |clip|}}
+    <!-- <p class="clip-author"><span>By</span>{{clip.title}}</p> -->
+    {{clip-content clip=clip}}
+  {{/each}}
