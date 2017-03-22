@@ -14,6 +14,7 @@
       {{model.body}}
     </p>
     <button {{action 'delete' model}}>Delete</button>
+    {{update-blog blogPost=model updateBlog='updateBlog'}}
   </div>
   <!-- right col -->
 </div>
