@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <h1>{{model.title}}</h1>
+  <h3>{{model.author}}</h3>
+  <h3>{{model.group}}</h3>
+</div>
+<!-- jumbotron -->
+<div class="row">
+  <div class="col-sm-4">
+    <img src={{model.img_link}} alt={{model.title}}>
+  </div>
+  <!-- left col -->
+  <div class="col-sm-8">
+    <p>
+      {{model.body}}
+    </p>
+    <button {{action 'delete' blogPost}}>Delete</button>
+  </div>
+  <!-- right col -->
+</div>
+<!-- row -->

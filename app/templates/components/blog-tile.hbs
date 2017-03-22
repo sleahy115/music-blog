@@ -1,6 +1,6 @@
 <div class="well">
   <div class="row">
-    <a target="_blank" href={{blogPost.url}}>
+    {{#link-to 'blog-page' blogPost.id}}
       <div class="col-md-6">
           <img src={{blogPost.img_link}} alt={{blogPost.title}}>
         <!-- img -->
@@ -23,7 +23,7 @@
           <!-- blogPost footer -->
         </div>
         <!-- right col -->
-      </a>
+      {{/link-to}}
     </div>
     <!-- row -->
   </div>
