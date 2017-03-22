@@ -3,11 +3,36 @@ li {
   padding: 25px;
   list-style: none;
 }
-
 ul {
   text-align: center;
 }
+time {
+  float: right;
+}
 
+img {
+  width: 350px;
+}
+body {
+  background: url('http://yourtoyotacenter.com.ismmedia.com/ISM3/std-content/repos/Top/Multimedia/iStock_000017088878Large.jpg') no-repeat center center;
+  background-size: 100% 100%;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: pink;
+}
+a:visited {
+  color: green;
+}
+.jumbotron {
+  background-color:rgba(63, 191, 136, 0.8);
+}
+
+.well {
+  background-color: rgba(191, 63, 119, 0.8);
+}
 .center {
   text-align: center;
 }
@@ -18,12 +43,4 @@ ul {
 
 .clip-author {
   text-align: left;
-}
-
-time {
-  float: right;
-}
-
-img {
-  width: 350px;
 }
