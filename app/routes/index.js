@@ -19,6 +19,7 @@ export default Ember.Route.extend({
   model() {
     return Ember.RSVP.hash({
       clips: this.store.findAll('clip'),
+      blogPosts: this.store.findAll('blogPost'),
       articles: test
     });
   }
