@@ -16,6 +16,7 @@ export default Ember.Component.extend({
         img_link: this.get('img_link'),
         publish_date: this.get('publish_date'),
         title: this.get('title'),
+        article: this.get('clip')
       };
       this.set('addNewBlog', false);
       this.sendAction('saveNewBlog', params);

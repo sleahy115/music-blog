@@ -1,13 +1,5 @@
-<!-- {{outlet}} -->
-
-
 
   {{#each model.articles as |clip|}}
-    <!-- <p class="clip-author"><span>By</span>{{clip.title}}</p> -->
+    {{new-blog saveNewBlog="saveNewBlog" clip=clip}}
     {{clip-content clip=clip}}
-    {{new-blog saveNewBlog="saveNewBlog"}}
   {{/each}}
-<!--
-{{#each model.articles as |article|}}
-<p>{{article.title}}</p>
-  {{/each}} -->

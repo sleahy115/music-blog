@@ -1,6 +1,7 @@
 
 {{#if showNewBlogForm}}
   <div class="well">
+    {{clip.title}}
     <form>
         <div class="form-group">
           <label for="title">Title</label>
@@ -27,6 +28,10 @@
         <label for="img_link">Image URL</label>
         {{input value=img_link id="img_link"}}
       </div>
+      <!-- <div class="form-group">
+        <label for="article">Article</label>
+        {{input value=article id="article" value=1}}
+      </div> -->
       <button {{action 'saveNewBlog' blogPost}}> Save </button>
     </form>
   </div>

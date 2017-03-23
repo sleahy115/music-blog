@@ -7,10 +7,11 @@ $.get("https://newsapi.org/v1/articles?source=mtv-news&sortBy=latest&apiKey=114a
   for (var i = 0; i < response.articles.length; i++) {
     artarr[i] = {
       title: response.articles[i].title,
-      url: response.articles[i].url,
-      author: response.articles[i].author,
       body: response.articles[i].description,
-      img_link: response.articles[i].urlToImage
+      img_link: response.articles[i].urlToImage,
+      author: response.articles[i].author,
+      url: response.articles[i].url,
+      blogs: {}
     }
   }
 });
@@ -26,7 +27,12 @@ export default Ember.Route.extend({
     actions: {
       saveNewBlog(params) {
         var newBlog = this.store.createRecord('blogPost', params);
-        newBlog.save();
+        var clip = artarr[0];
+        var newClip = this.store.createRecord('clip', clip);
+        newClip.get('blogs').addObject(newBlog);
+        newBlog.save().then(function(){
+        return newClip.save();
+      });
         this.transitionTo('blog');
       }
   }
