@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
-var test = [];
+var artarr = [];
 
 
 $.get("https://newsapi.org/v1/articles?source=mtv-news&sortBy=latest&apiKey=114a62f01a5049e79f27797505873305").then(function(response) {
   for (var i = 0; i < response.articles.length; i++) {
-    test[i] = {
+    artarr[i] = {
       title: response.articles[i].title,
       url: response.articles[i].url,
       author: response.articles[i].author,
@@ -20,7 +20,14 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       clips: this.store.findAll('clip'),
       blogPosts: this.store.findAll('blogPost'),
-      articles: test
-    });
+      articles: artarr
+  });
+},
+    actions: {
+      saveNewBlog(params) {
+        var newBlog = this.store.createRecord('blogPost', params);
+        newBlog.save();
+        this.transitionTo('blog');
+      }
   }
 });

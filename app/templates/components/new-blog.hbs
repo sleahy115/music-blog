@@ -1,33 +1,36 @@
+
 {{#if showNewBlogForm}}
-<div class="container">
-  <form>
-    <div class="form-group">
-      <label for="author">Author</label>
-      {{input value=author id="author"}}
-    </div>
-    <div class="form-group">
-      <label for="title">Title</label>
-      {{input value=title id="title"}}
-    </div>
-    <div class="form-group">
-      <label for="body">Body</label>
-      {{input value=body id="body"}}
-    </div>
-    <div class="form-group">
-      <label for="group">Group</label>
-      {{input value=group id="group"}}
-    </div>
-    <div class="form-group">
-      <label for="publish_date">Date</label>
-      {{input value=publish_date id="publish_date" type="date"}}
-    </div>
-    <div class="form-group">
-      <label for="img_link">Image URL</label>
-      {{input value=img_link id="img_link"}}
-    </div>  
-    <button {{action 'saveNewBlog' blogPost}}> Save </button>
-  </form>
-</div>
+  <div class="well">
+    <form>
+        <div class="form-group">
+          <label for="title">Title</label>
+          {{input value=title id="title"}}
+        </div>
+        <!-- end form-group -->
+      <div class="form-group">
+        <label for="author">Author</label>
+        {{input value=author id="author"}}
+      </div>
+      <div class="form-group">
+        <label for="body">Body</label>
+        {{textarea rows="10" cols="90" value=body id="body"}}
+      </div>
+      <div class="form-group">
+        <label for="group">Group</label>
+        {{input value=group id="group"}}
+      </div>
+      <div class="form-group">
+        <label for="publish_date">Date</label>
+        {{input value=publish_date id="publish_date" type="date"}}
+      </div>
+      <div class="form-group">
+        <label for="img_link">Image URL</label>
+        {{input value=img_link id="img_link"}}
+      </div>
+      <button {{action 'saveNewBlog' blogPost}}> Save </button>
+    </form>
+  </div>
+  <!-- well -->
 {{else}}
-<button {{action 'showNewBlogForm'}}>New Blog</button>
+  <button  {{action 'showNewBlogForm'}}>New Blog</button>
 {{/if}}

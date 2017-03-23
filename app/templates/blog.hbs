@@ -1,6 +1,7 @@
 <h1>Blog posts</h1>
+
+{{new-blog saveNewBlog="saveNewBlog"}}
+
 {{#each model as |blogPost|}}
   <li>{{blog-tile blogPost=blogPost}}</li>
 {{/each}}
-
-{{new-blog saveNewBlog="saveNewBlog"}}

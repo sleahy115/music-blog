@@ -5,6 +5,7 @@
   {{#each model.articles as |clip|}}
     <!-- <p class="clip-author"><span>By</span>{{clip.title}}</p> -->
     {{clip-content clip=clip}}
+    {{new-blog saveNewBlog="saveNewBlog"}}
   {{/each}}
 <!--
 {{#each model.articles as |article|}}
