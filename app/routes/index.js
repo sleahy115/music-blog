@@ -6,12 +6,12 @@ var artarr = [];
 $.get("https://newsapi.org/v1/articles?source=mtv-news&sortBy=latest&apiKey=114a62f01a5049e79f27797505873305").then(function(response) {
   for (var i = 0; i < response.articles.length; i++) {
     artarr[i] = {
-      title: response.articles[i].title,
+      author: response.articles[i].author,
+      blogs: [],
       body: response.articles[i].description,
       img_link: response.articles[i].urlToImage,
-      author: response.articles[i].author,
-      url: response.articles[i].url,
-      blogs: {}
+      title: response.articles[i].title,
+      url: response.articles[i].url
     }
   }
 });
@@ -27,10 +27,16 @@ export default Ember.Route.extend({
     actions: {
       saveNewBlog(params) {
         var newBlog = this.store.createRecord('blogPost', params);
-        var clip = artarr[0];
+        var clip = {};
+        for (var i = 0; i < artarr.length; i++){
+          if (artarr[i].title === params.article.title){
+            clip = artarr[i];
+          }
+        }
         var newClip = this.store.createRecord('clip', clip);
-        newClip.get('blogs').addObject(newBlog);
         newBlog.save().then(function(){
+        newClip.get('blogs').addObject(newBlog);
+        newClip.save();
         return newClip.save();
       });
         this.transitionTo('blog');

@@ -9,6 +9,6 @@ export default DS.Model.extend({
   body: DS.attr(),
   img_link: DS.attr(),
   author: DS.attr(),
-  publish_date: DS.attr(),
+  url: DS.attr(),
   blogs: DS.hasMany('blogPost', { async: true })
 });
