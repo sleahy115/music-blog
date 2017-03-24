@@ -1,14 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  // model() {
-  //   return Ember.RSVP.hash({
-  //     clips: this.store.findAll('clip'),
-  //     blogPosts: this.store.findAll('blogPost')
-  //   });
-  // },
+
   model(params) {
-    return this.store.findRecord('blogPost', params.blogPost_id);
+    return this.store.findRecord('blogPost', params.blogPost_id, {include: 'clips'});
+
   },
   actions: {
     updateBlog(blogPost, params) {

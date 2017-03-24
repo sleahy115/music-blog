@@ -7,5 +7,5 @@ export default DS.Model.extend({
   img_link: DS.attr(),
   publish_date: DS.attr(),
   title: DS.attr(),
-  article: DS.belongsTo('clip', {async:true})
+  article: DS.belongsTo('clip', { async: true })
 });

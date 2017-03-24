@@ -36,9 +36,9 @@ export default Ember.Route.extend({
         var newClip = this.store.createRecord('clip', clip);
         newBlog.save().then(function(){
           newClip.get('blogs').addObject(newBlog);
-          newClip.save();
+          // newClip.save();
           return newClip.save();
-      });
+        });
         this.transitionTo('blog');
       }
   }
